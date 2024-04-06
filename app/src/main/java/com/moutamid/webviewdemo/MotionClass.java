@@ -22,6 +22,8 @@ public class MotionClass extends AccessibilityService {
         }
 
         if (!event.getPackageName().equals(getPackageName())) {
+//        if (!event.getPackageName().getClass().equals(MainActivity.class.getSimpleName())) {
+//            Intent homeScreenIntent = new Intent(getApplicationContext(), MainActivity.class);
             Intent homeScreenIntent = new Intent(Intent.ACTION_MAIN);
             homeScreenIntent.addCategory(Intent.CATEGORY_HOME);
             homeScreenIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
