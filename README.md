@@ -1,0 +1,9 @@
+- **MainActivity**: 
+    - This class represents the main activity of the app.
+    - The purpose of this app is to display a WebView that loads the Google homepage.
+    - It includes functionality to show a dialog for entering a PIN after a certain number of button clicks, unlocking the app if the correct PIN is entered.
+    - Additionally, it contains logic to manage fullscreen mode, check accessibility service permissions, and ensure that the app is set as the default launcher.
+- **MotionClass**:
+    - This class extends AccessibilityService to handle accessibility events.
+    - It intercepts accessibility events and redirects the user to the home screen if the app is not unlocked with the correct PIN.
+    - This class works in conjunction with MainActivity to ensure that the user cannot navigate away from the app without unlocking it.
