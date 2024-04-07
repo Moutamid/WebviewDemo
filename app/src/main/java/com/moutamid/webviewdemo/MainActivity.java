@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         if (!isMyLauncherDefault()) {
-            openHomeAppChooser();
+            openDefaultAppsSettings();
             return;
         }
 
@@ -179,9 +180,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // open default home app chooser dialog
-    private void openHomeAppChooser() {
+    /*private void openHomeAppChooser() {
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
+    }*/
+
+    // open default apps settings screen to set the app as default launcher
+    private void openDefaultAppsSettings() {
+        Intent intent = new Intent(Settings.ACTION_HOME_SETTINGS);
         startActivity(intent);
     }
 
